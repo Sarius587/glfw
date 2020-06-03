@@ -35,25 +35,25 @@ define POSTBUILDCMDS
 endef
 
 ifeq ($(config),debug)
-TARGETDIR = bin/Debug-windows-x86_64/GLFW
+TARGETDIR = ./bin/Debug-windows-x86_64/GLFW
 TARGET = $(TARGETDIR)/GLFW.lib
-OBJDIR = bin-int/Debug-windows-x86_64/GLFW
+OBJDIR = ./bin-int/Debug-windows-x86_64/GLFW
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
 
 else ifeq ($(config),release)
-TARGETDIR = bin/Release-windows-x86_64/GLFW
+TARGETDIR = ./bin/Release-windows-x86_64/GLFW
 TARGET = $(TARGETDIR)/GLFW.lib
-OBJDIR = bin-int/Release-windows-x86_64/GLFW
+OBJDIR = ./bin-int/Release-windows-x86_64/GLFW
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
 
 else ifeq ($(config),dist)
-TARGETDIR = bin/Dist-windows-x86_64/GLFW
+TARGETDIR = ./bin/Dist-windows-x86_64/GLFW
 TARGET = $(TARGETDIR)/GLFW.lib
-OBJDIR = bin-int/Dist-windows-x86_64/GLFW
+OBJDIR = ./bin-int/Dist-windows-x86_64/GLFW
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
